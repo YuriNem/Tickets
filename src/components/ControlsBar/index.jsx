@@ -3,13 +3,13 @@ import React from 'react';
 import './style.scss';
 
 const ControlsBar = ({
-    allStops,
-    noStops,
-    oneStop,
-    twoStops,
-    threeStops,
-    onChangeCurrency,
-    onFilterStops,
+    allStops=false,
+    noStops=false,
+    oneStop=false,
+    twoStops=false,
+    threeStops=false,
+    onChangeCurrency= () => {},
+    onFilterStops= () => {},
 }) => {
     return (
         <div className="controls-bar">
