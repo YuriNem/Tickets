@@ -14,7 +14,7 @@ http.createServer(async (req, res) => {
     res.writeHead(200, { 'Content-Type': 'text/javascript' });
     res.end(js);
   } else {
-    const tickets = await readFileSync('./server/data.json');
+    const tickets = await readFileSync('./server/tickets.json');
     res.writeHead(200, { 'Content-Type': 'text/json' });
     res.end(tickets);
   }

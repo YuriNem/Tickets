@@ -51,7 +51,7 @@ export default class App extends React.Component {
         const { tickets, currency, allStops, noStops, oneStop, twoStops, threeStops } = this.state;
         return (
             <div className="app">
-                <ControlsBar { ...{ allStops, noStops, oneStop, twoStops, threeStops, onChangeCurrency: this.onChangeCurrency, onFilterStops: this.onFilterStops }} />
+                <ControlsBar {...{ allStops, noStops, oneStop, twoStops, threeStops, onChangeCurrency: this.onChangeCurrency, onFilterStops: this.onFilterStops }} />
                 <div className="app__tickets">
                 {
                     tickets
@@ -59,15 +59,16 @@ export default class App extends React.Component {
                         .map(ticket => {
                             return { ...ticket, price: ticket.price[currency] };
                         })
-                        .filter(t => [allStops, noStops, oneStop, twoStops, threeStops]
-                            .map((i, index) => {
-                                return { value: i, index: index - 1}
+                        .filter(ticket => [allStops, noStops, oneStop, twoStops, threeStops]
+                            .map((state, index) => {
+                                return { state, amount: index - 1 };
                             })
-                            .filter(i => i.value)
-                            .map((i) => (i.index === -1 || i.index === t.stops))
-                            .filter(i => i)
-                            .length !== 0)
-                        .map(ticket => <Ticket {...ticket } {...{ currency }} />)
+                            .filter(stop => stop.state)
+                            .map(stop => (stop.amount === -1 || stop.amount === ticket.stops))
+                            .filter(state => state)
+                            .length
+                        )
+                        .map(ticket => <Ticket {...ticket} {...{ currency }} />)
                     : null
                 }
                 </div>
