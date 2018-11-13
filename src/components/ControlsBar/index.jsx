@@ -3,14 +3,15 @@ import React from 'react';
 import './style.scss';
 
 const ControlsBar = ({
-    allStops=false,
-    noStops=false,
-    oneStop=false,
-    twoStops=false,
-    threeStops=false,
-    onChangeCurrency= () => {},
-    onFilterStops= () => {},
+    allStops,
+    noStops,
+    oneStop,
+    twoStops,
+    threeStops,
+    onChangeCurrency,
+    onFilterStops,
 }) => {
+    console.log(allStops);
     return (
         <div className="controls-bar">
             <section className="controls-bar__currency">
@@ -24,23 +25,23 @@ const ControlsBar = ({
             <section className="controls-bar__stops">
                 <h2 className="controls-bar__name">Колличество пересадок</h2>
                 <div className="controls-bar__filter">
-                    <input type="checkbox" className="controls-bar__checkbox" value={allStops} onChange={onFilterStops('allStops')} />
+                    <input type="checkbox" className="controls-bar__checkbox" checked={allStops} onChange={onFilterStops('allStops')} />
                     <span className="controls-bar__filter-name">Все</span>
                 </div>
                 <div className="controls-bar__filter">
-                    <input type="checkbox" className="controls-bar__checkbox" value={noStops} onChange={onFilterStops('noStops')} />
+                    <input type="checkbox" className="controls-bar__checkbox" checked={noStops} onChange={onFilterStops('noStops')} />
                     <span className="controls-bar__filter-name">Без пересадок</span>
                 </div>
                 <div className="controls-bar__filter">
-                    <input type="checkbox" className="controls-bar__checkbox" value={oneStop} onChange={onFilterStops('oneStop')} />
+                    <input type="checkbox" className="controls-bar__checkbox" checked={oneStop} onChange={onFilterStops('oneStop')} />
                     <span className="controls-bar__filter-name">1 пересадка</span>
                 </div>
                 <div className="controls-bar__filter">
-                    <input type="checkbox" className="controls-bar__checkbox" value={twoStops} onChange={onFilterStops('twoStops')} />
+                    <input type="checkbox" className="controls-bar__checkbox" checked={twoStops} onChange={onFilterStops('twoStops')} />
                     <span className="controls-bar__filter-name">2 пересадки</span>
                 </div>
                 <div className="controls-bar__filter">
-                    <input type="checkbox" className="controls-bar__checkbox" value={threeStops} onChange={onFilterStops('threeStops')} />
+                    <input type="checkbox" className="controls-bar__checkbox" checked={threeStops} onChange={onFilterStops('threeStops')} />
                     <span className="controls-bar__filter-name">3 пересадки</span>
                 </div>
             </section>

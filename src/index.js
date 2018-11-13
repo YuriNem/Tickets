@@ -1,9 +1,39 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import App from './components/App.jsx';
+import { createStore, applyMiddleware } from 'redux';
+import reducers from './reducers';
+import { composeWithDevTools } from 'redux-devtools-extension';
+import thunk from 'redux-thunk';
+import { Provider } from 'react-redux';
 
-import ControlsBar from './components/ControlsBar/index.jsx';
-import Ticket from './components/Ticket/index.jsx';
+import AppContainer from './containers/App.js';
 
-ReactDOM.render(<ControlsBar />, document.querySelector('#main'));
+//import ControlsBar from './components/ControlsBar/index.jsx';
+//import Ticket from './components/Ticket/index.jsx';
+
+const initState = {
+    tickets: [],
+    currency: 'RUB',
+    stops: {
+        allStops: true,
+        noStops: true,
+        oneStop: true,
+        twoStops: true,
+        threeStops: true,
+    },
+};
+
+const store = createStore(
+    reducers,
+    initState,
+    composeWithDevTools(applyMiddleware(thunk)),
+);
+
+const main = document.querySelector('#main');
+
+ReactDOM.render(
+    <Provider store={store}>
+      <AppContainer />
+    </Provider>, 
+main);
