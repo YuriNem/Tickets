@@ -1,42 +1,62 @@
 .controls-bar {
+    margin: 0px;
     width: 232px;
     height: 331px;
-    background-color: white;
+    background-color: #FFFFFF;
+    box-shadow: 0px 1px 4px rgba(91, 137, 164, 0.25);
+    border-radius: 5px;
+    padding-top: 17.3px;
+}
+
+.controls-bar__name {
+    margin: 0px;
+    font-family: OpenSans;
+    line-height: 19px;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+    color: #4A4A4A;
+    margin-left: 15px;
 }
 
 .controls-bar__buttons {
-    width: 204px;
-    height: 40px;
-    margin-top: 45px;
-    margin-right: 15px;
+    margin: 0px;
+    margin-top: 8.7px;
     margin-left: 15px;
-
 }
 
 .controls-bar__button {
-    width: 68px;
-    height: 40px;
-    background: #FFFFFF;
+    margin: 0px;
+    outline: 0;
+    width: 67px;
+    height: 39px;
+    background-color: #FFFFFF;
     border: 1px solid #D2D5D6;
     box-sizing: border-box;
-    border-radius: 0px 5px 5px 0px;
 }
 
 .controls-bar__button:hover {
-    background: #F2FCFF;
+    background-color: #F2FCFF;
     border: 1px solid #64B5F5;
-    box-sizing: border-box; 
 }
 
-.controls-bar__button:active {
-    background: #2196F3;
+.controls-bar__button_left {
     border-radius: 5px 0px 0px 5px;
+    border-right: 0px;
 }
 
-.controls-bar__checkbox {
-    display: block;
-    background: #F2FCFF;
-    border: 1px solid #2196F3;
-    box-sizing: border-box;
-    border-radius: 3px;
+.controls-bar__button_left:hover {
+    border-right: 0px;
+}
+
+.controls-bar__button_left:hover {
+    border-right: 0px;
+}
+
+.controls-bar__button_right {
+    border-radius: 0px 5px 5px 0px;
+    border-left: 0px;
+}
+
+.controls-bar__button_right:hover {
+    border-left: 0px;
 }

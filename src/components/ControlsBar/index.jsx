@@ -15,11 +15,11 @@ const ControlsBar = ({
     return (
         <div className="controls-bar">
             <section className="controls-bar__currency">
-                <h2 className="controls-bar__name">Валюта</h2>
+                <h2 className="controls-bar__name">ВАЛЮТА</h2>
                 <div className="controls-bar__buttons">
-                    <button className="controls-bar__button" onClick={onChangeCurrency('RUB')}>RUB</button>
-                    <button className="controls-bar__button" onClick={onChangeCurrency('USD')}>USD</button>
-                    <button className="controls-bar__button" onClick={onChangeCurrency('EUR')}>EUR</button>
+                    <button className="controls-bar__button controls-bar__button_left" onClick={onChangeCurrency('RUB')}>RUB</button>
+                    <button className="controls-bar__button controls-bar__button_middle" onClick={onChangeCurrency('USD')}>USD</button>
+                    <button className="controls-bar__button controls-bar__button_right" onClick={onChangeCurrency('EUR')}>EUR</button>
                 </div>
             </section>
             <section className="controls-bar__stops">
