@@ -1,25 +1,35 @@
 import React from 'react';
+import classNames from 'classnames';
 
 import './style.scss';
 
+const classButton = (currencyButton, sideButton) => currency => {
+    return classNames({
+        'controls-bar__button': true,
+        'controls-bar__button_hover': !(currency === currencyButton),
+        'controls-bar__button_active': currency === currencyButton,
+        [`controls-bar__button_${sideButton}`]: true,
+    });
+}
+
 const ControlsBar = ({
+    currency,
+    onChangeCurrency,
     allStops,
     noStops,
     oneStop,
     twoStops,
     threeStops,
-    onChangeCurrency,
     onFilterStops,
 }) => {
-    console.log(allStops);
     return (
         <div className="controls-bar">
             <section className="controls-bar__currency">
                 <h2 className="controls-bar__name">ВАЛЮТА</h2>
                 <div className="controls-bar__buttons">
-                    <button className="controls-bar__button controls-bar__button_left" onClick={onChangeCurrency('RUB')}>RUB</button>
-                    <button className="controls-bar__button controls-bar__button_middle" onClick={onChangeCurrency('USD')}>USD</button>
-                    <button className="controls-bar__button controls-bar__button_right" onClick={onChangeCurrency('EUR')}>EUR</button>
+                    <button className={classButton('RUB', 'left')(currency)} onClick={onChangeCurrency('RUB')}>RUB</button>
+                    <button className={classButton('USD', 'middle')(currency)} onClick={onChangeCurrency('USD')}>USD</button>
+                    <button className={classButton('EUR', 'right')(currency)} onClick={onChangeCurrency('EUR')}>EUR</button>
                 </div>
             </section>
             <section className="controls-bar__stops">

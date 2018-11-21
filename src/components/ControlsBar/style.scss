@@ -1,5 +1,4 @@
 .controls-bar {
-    margin: 0px;
     width: 232px;
     height: 331px;
     background-color: #FFFFFF;
@@ -19,44 +18,45 @@
 }
 
 .controls-bar__buttons {
-    margin: 0px;
     margin-top: 8.7px;
     margin-left: 15px;
 }
 
 .controls-bar__button {
-    margin: 0px;
     outline: 0;
-    width: 67px;
-    height: 39px;
+    position: relative;
+    width: 68px;
+    height: 40px;
     background-color: #FFFFFF;
     border: 1px solid #D2D5D6;
     box-sizing: border-box;
-}
-
-.controls-bar__button:hover {
-    background-color: #F2FCFF;
-    border: 1px solid #64B5F5;
+    margin-left: -1px;
+    z-index: 1;
+    font-family: OpenSans;
+    line-height: 22px;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
 }
 
 .controls-bar__button_left {
     border-radius: 5px 0px 0px 5px;
-    border-right: 0px;
-}
-
-.controls-bar__button_left:hover {
-    border-right: 0px;
-}
-
-.controls-bar__button_left:hover {
-    border-right: 0px;
+    margin-left: 0px;
 }
 
 .controls-bar__button_right {
     border-radius: 0px 5px 5px 0px;
-    border-left: 0px;
 }
 
-.controls-bar__button_right:hover {
-    border-left: 0px;
+.controls-bar__button_hover:hover {
+    background-color: #F2FCFF;
+    border: 1px solid #2196F3;
+    color: #2196F3;
+    z-index: 2;
+}
+
+.controls-bar__button_active {
+    background-color: #2196F3;
+    border: 1px solid #2196F3;
+    color: #FFFFFF;
 }

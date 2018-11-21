@@ -18,7 +18,7 @@ export default class App extends React.Component {
         const { tickets, currency, stops: { allStops, noStops, oneStop, twoStops, threeStops } } = this.props;
         return (
             <div className="app">
-                <ControlsBar {...{ allStops, noStops, oneStop, twoStops, threeStops, onChangeCurrency: this.onChangeCurrency, onFilterStops: this.onFilterStops }} />
+                <ControlsBar {...{ currency, allStops, noStops, oneStop, twoStops, threeStops, onChangeCurrency: this.onChangeCurrency, onFilterStops: this.onFilterStops }} />
                 <div className="app__tickets">
                 {
                     tickets
