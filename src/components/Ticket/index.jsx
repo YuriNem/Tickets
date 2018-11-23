@@ -2,6 +2,51 @@ import React from 'react';
 
 import './style.scss';
 
+const currencySymbol = {
+    RUB: '₽',
+    USD: '$',
+    EUR: '€',
+};
+
+const renderStops = (stops) => {
+    if (stops === 0) {
+        return '';
+    } else if (stops === 1) {
+        return '1 пересадка';
+    } else {
+        return `${stops} пересадки`;
+    }
+}
+
+const renderDate = (date) => {
+    const monthName = [
+        'янв',
+        'фев',
+        'мар',
+        'апр',
+        'май',
+        'июн',
+        'июл',
+        'авг',
+        'сен',
+        'окт',
+        'ноя',
+        'дек',
+    ];
+    const dayName = [
+        'Вс',
+        'Пн',
+        'Вт',
+        'Ср',
+        'Чт',
+        'Пт',
+        'Сб',
+    ];
+    const [day, month, year] = date.split('.');
+    const newDate = new Date([month, day, year].join('.'));
+    return `${newDate.getDate()} ${monthName[newDate.getMonth()]} ${newDate.getFullYear()}, ${dayName[newDate.getDay()]}`;
+}
+
 const Ticket = ({
     carrier,
     price,
@@ -16,48 +61,7 @@ const Ticket = ({
     destination_name: destinationName,
     arrival_date: arrivalDate,
 }) => {
-    const currencySymbol = {
-        RUB: '₽',
-        USD: '$',
-        EUR: '€',
-    };
-    const renderStops = (stops) => {
-        if (stops === 0) {
-            return '';
-        } else if (stops === 1) {
-            return '1 пересадка';
-        } else {
-            return `${stops} пересадки`;
-        }
-    }
-    const renderDate = (date) => {
-        const monthName = [
-            'янв',
-            'фев',
-            'мар',
-            'апр',
-            'май',
-            'июн',
-            'июл',
-            'авг',
-            'сен',
-            'окт',
-            'ноя',
-            'дек',
-        ];
-        const dayName = [
-            'Вс',
-            'Пн',
-            'Вт',
-            'Ср',
-            'Чт',
-            'Пт',
-            'Сб',
-        ];
-        const [day, month, year] = date.split('.');
-        const newDate = new Date([month, day, year].join('.'));
-        return `${newDate.getDate()} ${monthName[newDate.getMonth()]} ${newDate.getFullYear()}, ${dayName[newDate.getDay()]}`;
-    }
+    
     return (
         <div className="ticket">
             <section className="ticket__action-side">

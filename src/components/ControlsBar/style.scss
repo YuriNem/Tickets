@@ -15,11 +15,13 @@
     letter-spacing: 0.5px;
     color: #4A4A4A;
     margin-left: 15px;
+    text-transform: uppercase;
 }
 
 .controls-bar__buttons {
     margin-top: 8.7px;
     margin-left: 15px;
+    margin-bottom: 32.3px;
 }
 
 .controls-bar__button {
@@ -59,4 +61,25 @@
     background-color: #2196F3;
     border: 1px solid #2196F3;
     color: #FFFFFF;
+}
+
+.controls-bar__filters {
+    margin-top: 3.7px;
+    margin-left: 15px;
+}
+
+.controls-bar__filter {
+    display: block;
+    width: 232px;
+    height: 36px;
+    font-family: OpenSans;
+    line-height: 35px;
+    font-size: 13px;
+    color: #4A4A4A;
+}
+
+.controls-bar__filter:hover:after {
+    content: '             Hi';
+    display: inline-block;
+    margin-left: 30px; 
 }
