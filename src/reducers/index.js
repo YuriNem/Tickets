@@ -1,6 +1,7 @@
 import { handleActions } from 'redux-actions';
 import * as actions from '../actions';
 import { combineReducers } from 'redux';
+import { fail } from 'assert';
 
 const tickets = handleActions({
     [actions.getTickets](state, { payload: { tickets } }) {
@@ -49,6 +50,16 @@ const stops = handleActions({
         return { 
             ...state, 
             [filterName]: !stateFilter,
+        };
+    },
+    [actions.filterStopsOnly](state, { payload: { filterName } }) {
+        return { 
+            allStops: false,
+            noStops: false,
+            oneStop: false,
+            twoStops: false,
+            threeStops: false,
+            [filterName]: true,
         };
     },
 }, {

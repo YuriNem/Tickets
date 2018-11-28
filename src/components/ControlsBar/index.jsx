@@ -3,7 +3,7 @@ import classNames from 'classnames';
 
 import './style.scss';
 
-const classButton = (currencyButton, sideButton) => currency => {
+const classButton = (currencyButton, sideButton) => (currency) => {
     return classNames({
         'controls-bar__button': true,
         [`controls-bar__button_${sideButton}`]: true,
@@ -21,6 +21,7 @@ const ControlsBar = ({
     twoStops,
     threeStops,
     onFilterStops,
+    onFilterStopsOnly,
 }) => {
     return (
         <div className="controls-bar">
@@ -35,26 +36,35 @@ const ControlsBar = ({
             <section className="controls-bar__stops">
                 <h2 className="controls-bar__name">Количество пересадок</h2>
                 <div className="controls-bar__filters">
-                    <div className="controls-bar__filter">
-                        <input type="checkbox" className="controls-bar__checkbox" checked={allStops} onChange={onFilterStops('allStops')} />
-                        <label className="controls-bar__filter-name">Все</label>
-                    </div>
-                    <div className="controls-bar__filter">
-                        <input type="checkbox" className="controls-bar__checkbox" checked={noStops} onChange={onFilterStops('noStops')} />
+                    <label className="controls-bar__filter controls-bar__filter_all">
+                        <input type="checkbox" className="controls-bar__filter-checkbox" checked={allStops} onChange={onFilterStops('allStops')}/>
+                        <div className="controls-bar__filter-checkbox-custom"></div>
+                        <span className="controls-bar__filter-name">Все</span>
+                    </label>
+                    <label className="controls-bar__filter">
+                        <input type="checkbox" className="controls-bar__filter-checkbox" checked={noStops} onChange={onFilterStops('noStops')}/>
+                        <div className="controls-bar__filter-checkbox-custom"></div>
                         <span className="controls-bar__filter-name">Без пересадок</span>
-                    </div>
-                    <div className="controls-bar__filter">
-                        <input type="checkbox" className="controls-bar__checkbox" checked={oneStop} onChange={onFilterStops('oneStop')} />
+                        <button className="controls-bar__filter-button" onClick={onFilterStopsOnly('noStops')}>Только</button>
+                    </label>
+                    <label className="controls-bar__filter">
+                        <input type="checkbox" className="controls-bar__filter-checkbox" checked={oneStop} onChange={onFilterStops('oneStop')}/>
+                        <div className="controls-bar__filter-checkbox-custom"></div>
                         <span className="controls-bar__filter-name">1 пересадка</span>
-                    </div>
-                    <div className="controls-bar__filter">
-                        <input type="checkbox" className="controls-bar__checkbox" checked={twoStops} onChange={onFilterStops('twoStops')} />
+                        <button className="controls-bar__filter-button" onClick={onFilterStopsOnly('oneStop')}>Только</button>
+                    </label>
+                    <label className="controls-bar__filter">
+                        <input type="checkbox" className="controls-bar__filter-checkbox" checked={twoStops} onChange={onFilterStops('twoStops')}/>
+                        <div className="controls-bar__filter-checkbox-custom"></div>
                         <span className="controls-bar__filter-name">2 пересадки</span>
-                    </div>
-                    <div className="controls-bar__filter">
-                        <input type="checkbox" className="controls-bar__checkbox" checked={threeStops} onChange={onFilterStops('threeStops')} />
+                        <button className="controls-bar__filter-button" onClick={onFilterStopsOnly('twoStops')}>Только</button>
+                    </label>
+                    <label className="controls-bar__filter">
+                        <input type="checkbox" className="controls-bar__filter-checkbox" checked={threeStops} onChange={onFilterStops('threeStops')}/>
+                        <div className="controls-bar__filter-checkbox-custom"></div>
                         <span className="controls-bar__filter-name">3 пересадки</span>
-                    </div>
+                        <button className="controls-bar__filter-button" onClick={onFilterStopsOnly('threeStops')}>Только</button>
+                    </label>
                 </div>
             </section>
         </div>

@@ -14,6 +14,11 @@ export const asyncFilterStops = ({ filterName }) => async (dispatch) => {
     dispatch(filterStops({ filterName }));
 }
 
+export const filterStopsOnly = createAction('FILTER_STOPS_ONLY');
+export const asyncFilterStopsOnly = ({ filterName }) => async (dispatch) => {
+    dispatch(filterStopsOnly({ filterName }));
+}
+
 export const getTickets = createAction('GET_TICKETS');
 export const asyncGetTickets = () => async (dispatch) => {
     const resTickets = await axios.get('/tickets');

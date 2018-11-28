@@ -14,11 +14,13 @@ export default class App extends React.Component {
     
     onFilterStops = (filterStops) => () => this.props.asyncFilterStops({ filterName: filterStops });
 
+    onFilterStopsOnly = (filterStops) => () => this.props.asyncFilterStopsOnly({ filterName: filterStops });
+
     render() {
         const { tickets, currency, stops: { allStops, noStops, oneStop, twoStops, threeStops } } = this.props;
         return (
             <div className="app">
-                <ControlsBar {...{ currency, allStops, noStops, oneStop, twoStops, threeStops, onChangeCurrency: this.onChangeCurrency, onFilterStops: this.onFilterStops }} />
+                <ControlsBar {...{ currency, allStops, noStops, oneStop, twoStops, threeStops, onChangeCurrency: this.onChangeCurrency, onFilterStops: this.onFilterStops, onFilterStopsOnly: this.onFilterStopsOnly }} />
                 <div className="app__tickets">
                 {
                     tickets
