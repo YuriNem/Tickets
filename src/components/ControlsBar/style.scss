@@ -92,24 +92,87 @@
     position: relative;
 	width: 19px;
 	height: 19px;
-	background-color: #F2FCFF;
-    border: 1px solid #2196F3;
+	background-color: #FFFFFF;
+    border: 1px solid #D2D5D6;
     box-sizing: border-box;
     border-radius: 3px;
     display: inline-block;
 	vertical-align: middle;
 }
 
-.controls-bar__filter-checkbox:checked + .controls-bar__filter-checkbox-custom::before {
-	content: "";          
-	display: block;		
-	position: absolute;     
-	top: 2px;
-	right: 2px;
-	bottom: 2px;
-	left: 2px;
-	background: #413548; 
+.controls-bar__filter:hover {
+    .controls-bar__filter-checkbox-custom {
+        background-color: #F1FCFF;
+    }
+}
+
+.controls-bar__filter-checkbox:checked + .controls-bar__filter-checkbox-custom {
+	background-color: #F2FCFF;
+    border: 1px solid #2196F3;
+}
+
+.controls-bar__filter-checkbox:checked + .controls-bar__filter-checkbox-custom:before {
+    content: "";
+    width: 2px;
+    position: absolute;
+    top: 6.9px;
+    background-color: #3E9CE8;
+    left: 5px;
+    height: 4px;
     border-radius: 2px;
-    border: 2px solid #3E9CE8;
-    transform: matrix(0, 1, 1, 0, 0, 0);
+    transform: rotate(320deg);
+}
+
+.controls-bar__filter-checkbox:checked + .controls-bar__filter-checkbox-custom:after {
+    content: "";
+    width: 2px;
+    position: absolute;
+    top: 4.3px;
+    background-color: #3E9CE8;
+    left: 8.5px;
+    height: 8px;
+    border-radius: 2px;
+    transform: rotate(50deg);
+}
+
+.controls-bar__filter-name {
+    margin-left: 11px;
+    font-family: OpenSans;
+    line-height: 35px;
+    font-size: 13px;
+    color: #4A4A4A;
+}
+
+.controls-bar__filter-button {
+    outline: 0;
+    border: 0px;
+    float: right;
+    height: 36px;
+    font-family: OpenSans;
+    line-height: 35px;
+    font-size: 11px;
+    text-align: right;
+    letter-spacing: 0.5px;
+    color: #2196F3;
+    text-transform: uppercase;
+    position: relative;
+    display: none;
+}
+
+.controls-bar__filter:hover {
+    .controls-bar__filter-button {
+        animation: move  0.2s infinite ease-out;
+        animation-iteration-count: 1;
+        display: inline-block;
+        background-color: #F1FCFF;
+    }
+}
+
+@keyframes move {
+    from {
+        bottom: -50%;
+    }
+    to {
+    bottom: 0;
+    }
 }
