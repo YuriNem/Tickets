@@ -10,14 +10,10 @@ export const asyncChangeCurrency = ({ currency }) => async (dispatch) => {
 }
 
 export const filterStops = createAction('FILTER_STOPS');
-export const asyncFilterStops = ({ filterName }) => async (dispatch) => {
-    dispatch(filterStops({ filterName }));
-}
+export const asyncFilterStops = ({ nameFilter }) => async (dispatch) => dispatch(filterStops({ nameFilter }));
 
 export const filterStopsOnly = createAction('FILTER_STOPS_ONLY');
-export const asyncFilterStopsOnly = ({ filterName }) => async (dispatch) => {
-    dispatch(filterStopsOnly({ filterName }));
-}
+export const asyncFilterStopsOnly = ({ nameFilter }) => async (dispatch) => dispatch(filterStopsOnly({ nameFilter }));
 
 export const getTickets = createAction('GET_TICKETS');
 export const asyncGetTickets = () => async (dispatch) => {

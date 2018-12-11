@@ -1,7 +1,7 @@
 import React from 'react';
 import classNames from 'classnames';
 
-import FilterContainer from '../Filter/index.jsx';
+import FilterContainer from '../../containers/Filter.js';
 
 import './style.scss';
 
@@ -38,11 +38,11 @@ const ControlsBar = ({
             <section className="controls-bar__stops">
                 <h2 className="controls-bar__name">Количество пересадок</h2>
                 <div className="controls-bar__filters">
-                    <Filter isAll={true} stateStops={allStops} onFilterStops={onFilterStops} nameStops={'allStops'} onFilterStopsOnly={onFilterStopsOnly}/>
-                    <Filter isAll={false} stateStops={noStops} onFilterStops={onFilterStops} nameStops={'noStops'} onFilterStopsOnly={onFilterStopsOnly}/>
-                    <Filter isAll={false} stateStops={oneStop} onFilterStops={onFilterStops} nameStops={'oneStop'} onFilterStopsOnly={onFilterStopsOnly}/>
-                    <Filter isAll={false} stateStops={twoStops} onFilterStops={onFilterStops} nameStops={'twoStops'} onFilterStopsOnly={onFilterStopsOnly}/>
-                    <Filter isAll={false} stateStops={threeStops} onFilterStops={onFilterStops} nameStops={'threeStops'} onFilterStopsOnly={onFilterStopsOnly}/>
+                    <FilterContainer nameFilter={'allStops'}/>
+                    <FilterContainer nameFilter={'noStops'}/>
+                    <FilterContainer nameFilter={'oneStop'}/>
+                    <FilterContainer nameFilter={'twoStops'}/>
+                    <FilterContainer nameFilter={'threeStops'}/>
                 </div>
             </section>
         </div>

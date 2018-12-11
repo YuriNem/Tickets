@@ -16,17 +16,17 @@ const currency = handleActions({
 }, 'RUB');
 
 const stops = handleActions({
-    [actions.filterStops](state, { payload: { filterName } }) {
+    [actions.filterStops](state, { payload: { nameFilter } }) {
         const {
-            [filterName]: stateFilter,
+            [nameFilter]: stateFilter,
             allStops,
             noStops,
             oneStop,
             twoStops,
             threeStops,
         } = state;
-        if (filterName === 'allStops') {
-            return { 
+        if (nameFilter === 'allStops') {
+            return {
                 allStops: !allStops,
                 noStops: !allStops,
                 oneStop: !allStops,
@@ -34,32 +34,27 @@ const stops = handleActions({
                 threeStops: !allStops,
             };
         }
-        const l = [
-            noStops, 
-            oneStop, 
-            twoStops, 
-            threeStops,
-        ].filter(filter => filter).length;
-        if (l === 3 && !stateFilter || l === 4 && stateFilter) {
-            return { 
+        const lengthActiveFilters = [noStops, oneStop, twoStops, threeStops].filter(stateFilter => stateFilter).length;
+        if (lengthActiveFilters === 3 && !stateFilter || lengthActiveFilters === 4 && stateFilter) {
+            return {
                 ...state,
-                [filterName]: !stateFilter,
+                [nameFilter]: !stateFilter,
                 allStops: !allStops,
             };
         }
-        return { 
+        return {
             ...state, 
-            [filterName]: !stateFilter,
+            [nameFilter]: !stateFilter,
         };
     },
-    [actions.filterStopsOnly](state, { payload: { filterName } }) {
-        return { 
+    [actions.filterStopsOnly](state, { payload: { nameFilter } }) {
+        return {
             allStops: false,
             noStops: false,
             oneStop: false,
             twoStops: false,
             threeStops: false,
-            [filterName]: true,
+            [nameFilter]: true,
         };
     },
 }, {

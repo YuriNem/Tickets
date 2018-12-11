@@ -1,9 +1,10 @@
 import { connect } from 'react-redux';
-import * as actionCreators from '../actions';
-import Filter from '../components/ControlsBar/Filter/index.jsx';
+import { asyncFilterStops, asyncFilterStopsOnly } from '../actions';
 
-const mapStateToProps = state => state;
+import Filter from '../components/Filter/index.jsx';
 
-const FilterContainer = connect(mapStateToProps, actionCreators)(Filter);
+const mapStateToProps = state => ({ stops: state.stops });
+
+const FilterContainer = connect(mapStateToProps, { asyncFilterStops, asyncFilterStopsOnly })(Filter);
 
 export default FilterContainer;
