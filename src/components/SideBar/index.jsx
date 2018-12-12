@@ -14,16 +14,9 @@ const classButton = (currencyButton, sideButton) => (currency) => {
     });
 }
 
-const ControlsBar = ({
+const SideBar = ({
     currency,
     onChangeCurrency,
-    allStops,
-    noStops,
-    oneStop,
-    twoStops,
-    threeStops,
-    onFilterStops,
-    onFilterStopsOnly,
 }) => {
     return (
         <div className="controls-bar">
@@ -38,15 +31,11 @@ const ControlsBar = ({
             <section className="controls-bar__stops">
                 <h2 className="controls-bar__name">Количество пересадок</h2>
                 <div className="controls-bar__filters">
-                    <FilterContainer nameFilter={'allStops'}/>
-                    <FilterContainer nameFilter={'noStops'}/>
-                    <FilterContainer nameFilter={'oneStop'}/>
-                    <FilterContainer nameFilter={'twoStops'}/>
-                    <FilterContainer nameFilter={'threeStops'}/>
+                {['allStops', 'noStops', 'oneStop', 'twoStops', 'threeStops'].map(nameFilter => <FilterContainer nameFilter={nameFilter}/>)}
                 </div>
             </section>
         </div>
     );
 }
 
-export default ControlsBar;
+export default SideBar;

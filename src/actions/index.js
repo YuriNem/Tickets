@@ -5,9 +5,7 @@ import "babel-core/register";
 import "babel-polyfill";
 
 export const changeCurrency = createAction('CHANGE_CURRENCY');
-export const asyncChangeCurrency = ({ currency }) => async (dispatch) => {
-    dispatch(changeCurrency({ currency }));
-}
+export const asyncChangeCurrency = ({ currency }) => async (dispatch) => dispatch(changeCurrency({ currency }));
 
 export const filterStops = createAction('FILTER_STOPS');
 export const asyncFilterStops = ({ nameFilter }) => async (dispatch) => dispatch(filterStops({ nameFilter }));
