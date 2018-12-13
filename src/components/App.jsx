@@ -2,7 +2,7 @@ import React from 'react';
 
 import './style.scss';
 
-import ControlsBar from './ControlsBar/index.jsx';
+import SidebarContainer from '../containers/Sidebar.js';
 import Ticket from './Ticket/index.jsx';
 
 export default class App extends React.Component {
@@ -20,7 +20,7 @@ export default class App extends React.Component {
         const { tickets, currency, stops: { allStops, noStops, oneStop, twoStops, threeStops } } = this.props;
         return (
             <div className="app">
-                <ControlsBar {...{ currency, allStops, noStops, oneStop, twoStops, threeStops, onChangeCurrency: this.onChangeCurrency, onFilterStops: this.onFilterStops, onFilterStopsOnly: this.onFilterStopsOnly }} />
+                <SidebarContainer/>
                 <div className="app__tickets">
                 {
                     tickets
