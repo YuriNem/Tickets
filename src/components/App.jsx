@@ -3,7 +3,7 @@ import React from 'react';
 import './style.scss';
 
 import SidebarContainer from '../containers/Sidebar.js';
-import Ticket from './Ticket/index.jsx';
+import TicketContainer from '../containers/Ticket.js';
 
 export default class App extends React.Component {
     componentDidMount() {
@@ -37,7 +37,7 @@ export default class App extends React.Component {
                             .filter(state => state)
                             .length
                         )
-                        .map(ticket => <Ticket {...ticket} {...{ currency }} />)
+                        .map(ticket => <TicketContainer {...ticket} />)
                     : null
                 }
                 </div>

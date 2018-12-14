@@ -14,24 +14,30 @@
     text-align: center;
 }
 
-.ticket__carrier {
+.ticket__name {
     margin-top: 27.5px;
     margin-bottom: 27.5px;
 }
 
-.ticket__buy {
+.ticket__button {
     width: 160px;
     height: 56px;
     background-color: #FF6D00;
     box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.1), 0px 1px 0px #D64D08;
     border-radius: 5px;
-    border: 0px;
-    outline: 0;
+    border: none;
+    outline: none;
     color: #FFFFFF;
     font-family: OpenSans;
     font-size: 16px;
     padding: 6px 38.5px;
     line-height: 20px;
+    cursor: pointer;
+}
+
+.ticket__button:hover {
+    background-color: #FF8124;
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.25), 0px 1px 0px #F7661D;
 }
 
 .ticket__data-side {
@@ -64,7 +70,7 @@
     margin-right: 22px;
 }
 
-.ticket__plane-track {
+.ticket__line {
     background-color: #D2D5D6;
 }
 
