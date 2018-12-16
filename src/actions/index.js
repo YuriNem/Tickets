@@ -4,15 +4,6 @@ import axios from 'axios';
 import "babel-core/register";
 import "babel-polyfill";
 
-export const changeCurrency = createAction('CHANGE_CURRENCY');
-export const asyncChangeCurrency = ({ currency }) => async (dispatch) => dispatch(changeCurrency({ currency }));
-
-export const filterStops = createAction('FILTER_STOPS');
-export const asyncFilterStops = ({ nameFilter }) => async (dispatch) => dispatch(filterStops({ nameFilter }));
-
-export const filterStopsOnly = createAction('FILTER_STOPS_ONLY');
-export const asyncFilterStopsOnly = ({ nameFilter }) => async (dispatch) => dispatch(filterStopsOnly({ nameFilter }));
-
 export const getTickets = createAction('GET_TICKETS');
 export const asyncGetTickets = () => async (dispatch) => {
     const resTickets = await axios.get('/tickets');
@@ -31,3 +22,12 @@ export const asyncGetTickets = () => async (dispatch) => {
     });
     dispatch(getTickets({ tickets }));
 }
+
+export const changeCurrency = createAction('CHANGE_CURRENCY');
+export const asyncChangeCurrency = ({ currency }) => async (dispatch) => dispatch(changeCurrency({ currency }));
+
+export const filterStops = createAction('FILTER_STOPS');
+export const asyncFilterStops = ({ nameFilter }) => async (dispatch) => dispatch(filterStops({ nameFilter }));
+
+export const filterStopsOnly = createAction('FILTER_STOPS_ONLY');
+export const asyncFilterStopsOnly = ({ nameFilter }) => async (dispatch) => dispatch(filterStopsOnly({ nameFilter }));

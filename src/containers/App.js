@@ -1,9 +1,10 @@
 import { connect } from 'react-redux';
-import * as actionCreators from '../actions';
+import { asyncGetTickets } from '../actions';
+
 import App from '../components/App.jsx';
 
 const mapStateToProps = state => state;
 
-const AppContainer = connect(mapStateToProps, actionCreators)(App);
+const AppContainer = connect(mapStateToProps, { asyncGetTickets })(App);
 
 export default AppContainer;

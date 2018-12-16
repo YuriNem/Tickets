@@ -1,7 +1,6 @@
 import { handleActions } from 'redux-actions';
 import * as actions from '../actions';
 import { combineReducers } from 'redux';
-import { fail } from 'assert';
 
 const tickets = handleActions({
     [actions.getTickets](state, { payload: { tickets } }) {
