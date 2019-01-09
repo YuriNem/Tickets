@@ -36,6 +36,18 @@
     border: 1px solid #2196F3;
 }
 
+.filter__checkbox-custom:before {
+    content: "";
+    top: 0.9px;
+    transition: top .1s linear;
+}
+
+.filter__checkbox-custom:after {
+    content: "";
+    top: -2.3px;
+    transition: top .1s linear;
+}
+
 .filter__checkbox:checked + .filter__checkbox-custom:before {
     content: "";
     width: 2px;

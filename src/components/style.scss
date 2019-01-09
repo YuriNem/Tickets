@@ -1,3 +1,18 @@
 body {
+    margin: 0px;
+}
+
+.app {
+    padding-top: 20px;
     background-color: #F2F2F2;
+    display: grid;
+    grid-template-columns: 232px 566px;
+    justify-content: center;
+    grid-gap: 10px;
+}
+
+.app__tickets {
+    display: grid;
+    grid-template-columns: 566px;
+    grid-gap: 10px;
 }
