@@ -7,11 +7,11 @@ import "babel-polyfill";
 export const getTickets = createAction('GET_TICKETS');
 export const asyncGetTickets = () => async (dispatch) => {
     const resTickets = await axios.get('/tickets');
-    const resCurrencyToEUR = await axios.get('http://data.fixer.io/api/latest?access_key=f27fa21a92adb73e190d7fd704cad72a');
+    //const resCurrencyToEUR = await axios.get('https://data.fixer.io/api/latest?access_key=');
     const currencyToRUB = {
-        RUB: resCurrencyToEUR.data.rates.RUB / resCurrencyToEUR.data.rates.RUB,
-        USD: resCurrencyToEUR.data.rates.USD / resCurrencyToEUR.data.rates.RUB,
-        EUR: resCurrencyToEUR.data.rates.EUR / resCurrencyToEUR.data.rates.RUB,
+        RUB: 1,
+        USD: 1 / 67,
+        EUR: 1 / 77,
     };
     const tickets = resTickets.data.tickets.map(ticket => {
         return { ...ticket, price: {
