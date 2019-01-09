@@ -4174,7 +4174,7 @@ eval("exports = module.exports = __webpack_require__(/*! ../../../node_modules/c
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader/lib/css-base.js */ \"./node_modules/css-loader/lib/css-base.js\")(false);\n// imports\n\n\n// module\nexports.push([module.i, \"body {\\n  margin: 0px; }\\n\\n.app {\\n  padding-top: 20px;\\n  background-color: #F2F2F2;\\n  display: grid;\\n  grid-template-columns: 232px 566px;\\n  justify-content: center;\\n  grid-gap: 10px; }\\n\\n.app__tickets {\\n  display: grid;\\n  grid-template-columns: 566px;\\n  grid-gap: 10px; }\\n\", \"\"]);\n\n// exports\n\n\n//# sourceURL=webpack:///./src/components/style.scss?./node_modules/css-loader!./node_modules/postcss-loader/src!./node_modules/sass-loader/lib/loader.js");
+eval("exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader/lib/css-base.js */ \"./node_modules/css-loader/lib/css-base.js\")(false);\n// imports\n\n\n// module\nexports.push([module.i, \"body {\\n  margin: 0px;\\n  background-color: #F2F2F2; }\\n\\n.app {\\n  padding-top: 20px;\\n  padding-bottom: 20px;\\n  background-color: #F2F2F2;\\n  display: grid;\\n  grid-template-columns: 232px 566px;\\n  justify-content: center;\\n  grid-gap: 10px; }\\n\\n.app__tickets {\\n  display: grid;\\n  grid-template-columns: 566px;\\n  grid-gap: 10px; }\\n\", \"\"]);\n\n// exports\n\n\n//# sourceURL=webpack:///./src/components/style.scss?./node_modules/css-loader!./node_modules/postcss-loader/src!./node_modules/sass-loader/lib/loader.js");
 
 /***/ }),
 
