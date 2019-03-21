@@ -64,8 +64,15 @@ const stops = handleActions({
     threeStops: true,
 });
 
+const mobileSidebar = handleActions({
+    [actions.changeSidebarView](state) {
+        return !state;
+    },
+}, false);
+
 export default combineReducers({
     tickets,
     currency,
     stops,
+    mobileSidebar,
 });

@@ -2,19 +2,19 @@ const http = require('http');
 const util = require('util');
 const fs = require('fs');
 
-const readFileSync = util.promisify(fs.readFile);
+const readFilePromise = util.promisify(fs.readFile);
 
 http.createServer(async (req, res) => {
   if (req.url === '/') {
-    const html = await readFileSync('./public/index.html');
+    const html = await readFilePromise('./public/index.html');
     res.writeHead(200, { 'Content-Type': 'text/html' });
     res.end(html);
   } else if (req.url.match(/.js$/)) {
-    const js = await readFileSync('./dist/main.js');
+    const js = await readFilePromise('./dist/main.js');
     res.writeHead(200, { 'Content-Type': 'text/javascript' });
     res.end(js);
-  } else {
-    const tickets = await readFileSync('./server/tickets.json');
+  } else if (req.url === '/tickets') {
+    const tickets = await readFilePromise('./server/tickets.json');
     res.writeHead(200, { 'Content-Type': 'text/json' });
     res.end(tickets);
   }

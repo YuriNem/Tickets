@@ -1,20 +1,78 @@
 body {
-    margin: 0px;
-    background-color: #F2F2F2;
+    max-width: 1024px;
+    margin: 0px auto;
+    background-color: #F3F7FA;
+    padding-top: 50px;
+    overflow: scroll;
 }
 
-.app {
-    padding-top: 20px;
-    padding-bottom: 20px;
-    background-color: #F2F2F2;
+.app__logo {
+    display: block;
+    margin: 0px auto;
+}
+
+.app__main {
+    padding-top: 50px;
+    padding-bottom: 100px;
     display: grid;
     grid-template-columns: 232px 566px;
     justify-content: center;
-    grid-gap: 10px;
+    grid-gap: 20px;
 }
 
 .app__tickets {
     display: grid;
-    grid-template-columns: 566px;
-    grid-gap: 10px;
+    width: 566px;
+    grid-gap: 20px;
+}
+
+.app__button {
+    position: fixed;
+    bottom: 5%;
+    left: 50%;
+    margin-left: -80px;
+    width: 160px;
+    height: 56px;
+    outline: none;
+    border: none;
+    border-radius: 50px;
+    color: #FFFFFF;
+    font-family: OpenSans;
+    font-size: 16px;
+    line-height: 20px;
+    display: none;
+    background-color: #2196F3;
+}
+
+@media screen and (max-width: 1024px) {
+    .app__main {
+        grid-template-columns: 566px;
+    }
+
+    .app__button {
+        display: block;
+    }
+}
+
+@media screen and (max-width: 566px) {
+    body {
+        padding-top: 25px;
+    }
+
+    .app__logo {
+        width: 75px;
+        height: 75px;
+    }
+
+    .app__main {
+        padding-top: 25px;
+        padding-bottom: 50px;
+        grid-template-columns: 283px;
+        grid-gap: 10px;
+    }
+
+    .app__tickets {
+        width: 283px;
+        grid-gap: 10px;
+    }
 }

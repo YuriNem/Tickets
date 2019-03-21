@@ -5,6 +5,8 @@
     display: inline-block;
     box-sizing: border-box;
     cursor: pointer;
+    position: relative;
+    z-index: 2;
 }
 
 .filter:hover {
@@ -12,7 +14,8 @@
 }
 
 .filter__checkbox {
-    display: none;
+    visibility: hidden;
+    position: absolute;
 }
 
 .filter__checkbox-custom {
@@ -37,39 +40,41 @@
 }
 
 .filter__checkbox-custom:before {
-    content: "";
     top: 0.9px;
-    transition: top .1s linear;
-}
-
-.filter__checkbox-custom:after {
-    content: "";
-    top: -2.3px;
-    transition: top .1s linear;
-}
-
-.filter__checkbox:checked + .filter__checkbox-custom:before {
+    transition: .2s ease-in-out;
     content: "";
     width: 2px;
     position: absolute;
-    top: 6.9px;
     background-color: #3E9CE8;
     left: 5px;
     height: 4px;
     border-radius: 2px;
     transform: rotate(320deg);
+    opacity: 0;
 }
 
-.filter__checkbox:checked + .filter__checkbox-custom:after {
+.filter__checkbox-custom:after {
     content: "";
+    top: -2.3px;
+    transition: .2s ease-in-out;
     width: 2px;
     position: absolute;
-    top: 4.3px;
     background-color: #3E9CE8;
     left: 8.5px;
     height: 8px;
     border-radius: 2px;
     transform: rotate(50deg);
+    opacity: 0;
+}
+
+.filter__checkbox:checked + .filter__checkbox-custom:before {
+    top: 6.9px;
+    opacity: 1;
+}
+
+.filter__checkbox:checked + .filter__checkbox-custom:after {
+    top: 4.3px;
+    opacity: 1;
 }
 
 .filter__name {
@@ -83,18 +88,27 @@
 }
 
 .filter__button {
-    display: none;
-    position: absolute;
+    height: 16px;
+    position: relative;
     padding-left: 33px;
     padding-right: 15px;
     border: none;
     background-color: #FFFFFF;
     outline: none;
+    transition: .1s ease-in-out;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 1;
+    transform: translateY(10px);
 }
 
 .filter:hover .filter__button {
-    display: inline-block;
     background-color: #F1FCFF;
+    opacity: 1;
+    visibility: visible;
+    z-index: 3;
+    transform: translateY(0px);
+    height: 36px;
 }
 
 .filter__button-text {
@@ -111,4 +125,39 @@
 
 .filter__button-text:hover {
     color: #FF9D1B;
+}
+
+@media screen and (max-width: 1024px) {
+    .filter {
+        width: 242px;
+    }
+    
+    .filter__name {
+        font-size: 15px;
+    }
+
+    .filter__checkbox-custom {
+        width: 28.5px;
+        height: 28.5px;
+    }
+    
+    .filter__checkbox-custom:before {
+        width: 3px;
+        left: 8.5px;
+        height: 6px;
+    }
+    
+    .filter__checkbox-custom:after {
+        width: 3px;
+        left: 13.75px;
+        height: 12px;
+    }
+    
+    .filter__checkbox:checked + .filter__checkbox-custom:before {
+        top: 11.35px;
+    }
+    
+    .filter__checkbox:checked + .filter__checkbox-custom:after {
+        top: 7.45px;
+    }
 }

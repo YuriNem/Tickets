@@ -1,6 +1,7 @@
 import React from 'react';
 
 import './style.scss';
+const ticketIcon = require('../../../svg/ticketIcon.svg');
 
 const currencySymbol = {
     RUB: '₽',
@@ -73,17 +74,18 @@ const Ticket = ({
                     <div className="ticket__stops">
                         <div className="ticket__amount-stops">{renderStops(stops)}</div>
                         <hr className="ticket__line"/>
+                        <img className="ticket__icon" src={ticketIcon} alt="ticketIcon"/>
                     </div>
                     <span className="ticket__time">{arrivalTime}</span>
                 </div>
                 <div className="ticket__places-and-dates">
-                    <div className="ticket__place-and-date_left">
-                        <div className="ticket__place ticket__place_left">{`${origin}, ${originName}`}</div>
-                        <div className="ticket__date ticket__date_left">{renderDate(departureDate)}</div>
+                    <div className="ticket__place-and-date ticket__place-and-date_left">
+                        <div className="ticket__place">{`${origin}, ${originName}`}</div>
+                        <div className="ticket__date">{renderDate(departureDate)}</div>
                     </div>
-                    <div className="ticket__place-and-date_right">
-                        <div className="ticket__place ticket__place_right">{`${destinationName}, ${destination}`}</div>
-                        <div className="ticket__date ticket__date_right">{renderDate(arrivalDate)}</div>
+                    <div className="ticket__place-and-date ticket__place-and-date_right">
+                        <div className="ticket__place">{`${destinationName}, ${destination}`}</div>
+                        <div className="ticket__date">{renderDate(arrivalDate)}</div>
                     </div>
                 </div>
             </section>

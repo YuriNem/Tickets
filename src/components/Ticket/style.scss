@@ -72,6 +72,13 @@
 
 .ticket__line {
     background-color: #D2D5D6;
+    width: 95px;
+    display: inline-block;
+}
+
+.ticket__icon {
+    margin-bottom: 3px;
+    margin-left: 1px;
 }
 
 .ticket__places-and-dates {
@@ -82,6 +89,18 @@
     margin-right: 25px;
 }
 
+.ticket__place-and-date {
+    display: grid;
+}
+
+.ticket__place-and-date_left {
+    justify-items: left;
+}
+
+.ticket__place-and-date_right {
+    justify-items: right;
+}
+
 .ticket__place {
     font-family: OpenSans;
     font-size: 14px;
@@ -89,25 +108,9 @@
     color: #4A4A4A;
 }
 
-.ticket__place_left {
-    float: left;
-}
-
-.ticket__place_right {
-    float: right;
-}
-
 .ticket__date {
     font-family: OpenSans;
     font-size: 12px;
     line-height: 18px;
     color: #8B9497;
-}
-
-.ticket__date_left {
-    float: left;
-}
-
-.ticket__date_right {
-    float: right;
 }

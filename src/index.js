@@ -9,9 +9,6 @@ import { Provider } from 'react-redux';
 
 import AppContainer from './containers/App.js';
 
-//import ControlsBar from './components/ControlsBar/index.jsx';
-//import Ticket from './components/Ticket/index.jsx';
-
 const initState = {
     tickets: [],
     currency: 'RUB',
@@ -22,6 +19,7 @@ const initState = {
         twoStops: true,
         threeStops: true,
     },
+    mobileSidebar: false,
 };
 
 const store = createStore(
@@ -30,10 +28,11 @@ const store = createStore(
     composeWithDevTools(applyMiddleware(thunk)),
 );
 
-const main = document.querySelector('#main');
+const render = document.getElementById('render');
 
 ReactDOM.render(
     <Provider store={store}>
       <AppContainer />
-    </Provider>, 
-main);
+    </Provider>,
+    render,
+);

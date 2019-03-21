@@ -1,5 +1,3 @@
-const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
-
 module.exports = {
     module: {
         rules: [
@@ -22,7 +20,7 @@ module.exports = {
                 use: 'url-loader',
             },
             {
-                test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
+                test: /\.(woff(2)?|ttf|eot)(\?v=\d+\.\d+\.\d+)?$/,
                 use: [{
                     loader: 'file-loader',
                     options: {
@@ -33,12 +31,4 @@ module.exports = {
             },
         ],
     },
-    plugins: [
-        new BrowserSyncPlugin({
-          host: 'localhost',
-          port: 3000,
-          files: ['./dist/main.js'],
-          server: { baseDir: ['dist'] },
-        }),
-    ],
 };

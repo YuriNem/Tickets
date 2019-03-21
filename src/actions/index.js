@@ -13,13 +13,13 @@ export const asyncGetTickets = () => async (dispatch) => {
         USD: 1 / 67,
         EUR: 1 / 77,
     };
-    const tickets = resTickets.data.tickets.map(ticket => {
-        return { ...ticket, price: {
+    const tickets = resTickets.data.tickets.map(ticket => (
+        { ...ticket, price: {
             RUB: ticket.price,
-            USD: Math.ceil(ticket.price * currencyToRUB.USD),
-            EUR: Math.ceil(ticket.price * currencyToRUB.EUR),
-        } };
-    });
+            USD: Math.round(ticket.price * currencyToRUB.USD),
+            EUR: Math.round(ticket.price * currencyToRUB.EUR),
+        } }
+    ));
     dispatch(getTickets({ tickets }));
 }
 
@@ -31,3 +31,6 @@ export const asyncFilterStops = ({ nameFilter }) => async (dispatch) => dispatch
 
 export const filterStopsOnly = createAction('FILTER_STOPS_ONLY');
 export const asyncFilterStopsOnly = ({ nameFilter }) => async (dispatch) => dispatch(filterStopsOnly({ nameFilter }));
+
+export const changeSidebarView = createAction('CHANGE_SIDEBAR_VIEW');
+export const asyncChangeSidebarView = () => async (dispatch) => dispatch(changeSidebarView());

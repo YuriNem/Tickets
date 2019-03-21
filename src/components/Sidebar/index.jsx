@@ -14,12 +14,22 @@ const classButton = (currencyButton, sideButton) => (currency) => {
     });
 }
 
+const classSidebar = (mobileSidebar) => {
+    return classNames({
+        'sidebar': true,
+        'sidebar_mobile-opened': mobileSidebar,
+    });
+}
+
 const Sidebar = ({
     currency,
+    mobileSidebar,
     asyncChangeCurrency,
+    asyncChangeSidebarView,
 }) => {
     return (
-        <div className="sidebar">
+        <div className={classSidebar(mobileSidebar)}>
+            <button className="sidebar__mobile-button" onClick={asyncChangeSidebarView}>Фильтры</button>
             <section className="sidebar__currency">
                 <h2 className="sidebar__name">Валюта</h2>
                 <div className="sidebar__buttons">
