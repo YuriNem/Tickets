@@ -9,7 +9,7 @@ const currencySymbol = {
     EUR: '€',
 };
 
-const renderStops = (stops) => {
+const renderStops = stops => {
     if (stops === 0) {
         return '';
     } else if (stops === 1) {
@@ -19,7 +19,7 @@ const renderStops = (stops) => {
     }
 }
 
-const renderDate = (date) => {
+const renderDate = date => {
     const monthName = [
         'янв',
         'фев',

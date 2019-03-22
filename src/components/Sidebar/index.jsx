@@ -5,19 +5,19 @@ import FilterContainer from '../../containers/Filter.js';
 
 import './style.scss';
 
-const classButton = (currencyButton, sideButton) => (currency) => {
+const classSidebar = mobileSidebar => {
+    return classNames({
+        'sidebar': true,
+        'sidebar_mobile-opened': mobileSidebar,
+    });
+}
+
+const classButton = (currencyButton, sideButton) => currency => {
     return classNames({
         'sidebar__button': true,
         [`sidebar__button_${sideButton}`]: true,
         'sidebar__button_hover': !(currency === currencyButton),
         'sidebar__button_active': currency === currencyButton,
-    });
-}
-
-const classSidebar = (mobileSidebar) => {
-    return classNames({
-        'sidebar': true,
-        'sidebar_mobile-opened': mobileSidebar,
     });
 }
 
@@ -41,7 +41,7 @@ const Sidebar = ({
             <section className="sidebar__stops">
                 <h2 className="sidebar__name">Количество пересадок</h2>
                 <div className="sidebar__filters">
-                {['allStops', 'noStops', 'oneStop', 'twoStops', 'threeStops'].map(nameFilter => <FilterContainer nameFilter={nameFilter}/>)}
+                {['allStops', 'noStops', 'oneStop', 'twoStops', 'threeStops'].map(nameFilter => <FilterContainer nameFilter={nameFilter} />)}
                 </div>
             </section>
         </div>
