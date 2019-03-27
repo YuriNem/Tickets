@@ -24,7 +24,7 @@ export default class App extends React.Component {
         } = this.props;
 
         return (
-            <div className="app">
+            <div className="app" >
                 <img className="app__logo" src={logo} alt="logo" />
                 <div className="app__main">
                     <SidebarContainer />

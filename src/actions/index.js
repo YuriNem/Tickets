@@ -1,8 +1,7 @@
 import { createAction } from 'redux-actions';
 import axios from 'axios';
 
-import "babel-core/register";
-import "babel-polyfill";
+import 'babel-polyfill';
 
 export const getTickets = createAction('GET_TICKETS');
 export const asyncGetTickets = () => async (dispatch) => {
@@ -10,8 +9,8 @@ export const asyncGetTickets = () => async (dispatch) => {
     //const resCurrencyToEUR = await axios.get('https://data.fixer.io/api/latest?access_key=');
     const currencyToRUB = {
         RUB: 1,
-        USD: 1 / 67,
-        EUR: 1 / 77,
+        USD: 1 / 64,
+        EUR: 1 / 73,
     };
     const tickets = resTickets.data.tickets.map(ticket => (
         { ...ticket, price: {

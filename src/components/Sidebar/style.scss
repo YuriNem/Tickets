@@ -122,10 +122,22 @@
 
     .sidebar__name {
         font-size: 14px;
+        margin-left: 0px;
+    }
+
+    .sidebar__buttons {
+        margin-left: 0px;
     }
 
     .sidebar__currency {
+        width: 304px;
+        margin: 0px auto;
         margin-top: 32.3px;
+    }
+
+    .sidebar__stops {
+        width: 304px;
+        margin: 0px auto;
     }
 
     .sidebar__button {
@@ -136,5 +148,6 @@
 
     .sidebar__filters {
         display: grid;
+        margin-top: 10px;
     }
 }
