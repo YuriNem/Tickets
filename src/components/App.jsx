@@ -10,7 +10,9 @@ import TicketContainer from '../containers/Ticket.js';
 export default class App extends React.Component {
 
     componentDidMount() {
-        const { asyncGetTickets } = this.props;
+        const { asyncGetTickets, asyncOffMobileSidebar } = this.props;
+        window.addEventListener('resize', 
+            event => asyncOffMobileSidebar({ width: event.target.screen.width }));
         asyncGetTickets();
     }
 
@@ -20,14 +22,14 @@ export default class App extends React.Component {
             currency, 
             stops: { allStops, noStops, oneStop, twoStops, threeStops }, 
             mobileSidebar, 
-            asyncChangeSidebarView 
+            asyncChangeSidebarView,
         } = this.props;
 
         return (
-            <div className="app" >
-                <img className="app__logo" src={logo} alt="logo" />
+            <div className="app">
+                <img className="app__logo" src={logo} alt="logo"/>
                 <div className="app__main">
-                    <SidebarContainer />
+                    <SidebarContainer/>
                     <div className="app__tickets">
                         {tickets && !mobileSidebar ? 
                         tickets
@@ -40,7 +42,7 @@ export default class App extends React.Component {
                             .filter(state => state)
                             .length;
                         })
-                        .map(ticket => <TicketContainer {...ticket} key={uniqueId()} />)
+                        .map(ticket => <TicketContainer {...ticket} key={uniqueId()}/>)
                         : null}
                     </div>
                 </div>

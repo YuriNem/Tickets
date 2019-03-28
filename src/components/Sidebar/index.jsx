@@ -41,7 +41,7 @@ const Sidebar = ({
             <section className="sidebar__stops">
                 <h2 className="sidebar__name">Количество пересадок</h2>
                 <div className="sidebar__filters">
-                {['allStops', 'noStops', 'oneStop', 'twoStops', 'threeStops'].map(nameFilter => <FilterContainer nameFilter={nameFilter} />)}
+                {['allStops', 'noStops', 'oneStop', 'twoStops', 'threeStops'].map(nameFilter => <FilterContainer nameFilter={nameFilter}/>)}
                 </div>
             </section>
         </div>

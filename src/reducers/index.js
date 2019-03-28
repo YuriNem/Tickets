@@ -68,6 +68,12 @@ const mobileSidebar = handleActions({
     [actions.changeSidebarView](state) {
         return !state;
     },
+    [actions.offMobileSidebar](state, { payload: { width } }) {
+        if (width > 1024) {
+            return false;
+        }
+        return state;
+    },
 }, false);
 
 export default combineReducers({

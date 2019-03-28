@@ -18,7 +18,7 @@ const Filter = ({
 }) => {
     return (
         <label className="filter">
-            <input className="filter__checkbox" type="checkbox" checked={stops[nameFilter]} onChange={() => asyncFilterStops({ nameFilter })} />
+            <input className="filter__checkbox" type="checkbox" checked={stops[nameFilter]} onChange={() => asyncFilterStops({ nameFilter })}/>
             <div className="filter__checkbox-custom"></div>
             <div className="filter__name">{namesFilterString[nameFilter]}</div>
             {!(nameFilter === 'allStops') ? 

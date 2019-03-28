@@ -20,7 +20,7 @@ export const asyncGetTickets = () => async (dispatch) => {
         } }
     ));
     dispatch(getTickets({ tickets }));
-}
+};
 
 export const changeCurrency = createAction('CHANGE_CURRENCY');
 export const asyncChangeCurrency = ({ currency }) => async (dispatch) => dispatch(changeCurrency({ currency }));
@@ -33,3 +33,6 @@ export const asyncFilterStopsOnly = ({ nameFilter }) => async (dispatch) => disp
 
 export const changeSidebarView = createAction('CHANGE_SIDEBAR_VIEW');
 export const asyncChangeSidebarView = () => async (dispatch) => dispatch(changeSidebarView());
+
+export const offMobileSidebar = createAction('OFF_MOBILE_SIDEBAR');
+export const asyncOffMobileSidebar = ({ width }) => async (dispatch) => dispatch(offMobileSidebar({ width }));
