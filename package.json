@@ -31,7 +31,8 @@
     "webpack": "^4.29.6",
     "webpack-cli": "^3.3.0",
     "babel-polyfill": "^6.26.0",
-    "postcss-loader": "^3.0.0"
+    "postcss-loader": "^3.0.0",
+    "prettier": "^1.16.4"
   },
   "dependencies": {
     "autoprefixer": "^9.5.0",
